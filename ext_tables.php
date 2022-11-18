@@ -1,16 +1,16 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 if (! defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+ExtensionManagementUtility::addLLrefForTCAdescr(
     'tx_owlslider_domain_model_item',
     'EXT:owl_slider/Resources/Private/Language/locallang_csh_tx_owlslider_domain_model_item.xlf'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+ExtensionManagementUtility::allowTableOnStandardPages(
     'tx_owlslider_domain_model_item'
 );
-
-include_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('owl_slider') . 'Classes/PHP/tx_owlslider_addFieldsToFlexForm.php');

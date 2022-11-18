@@ -26,7 +26,10 @@ namespace Comsolit\OwlSlider\Controller;
  * This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Comsolit\OwlSlider\Domain\Model\Item;
+use Comsolit\OwlSlider\Domain\Repository\ItemRepository;
 use TYPO3\CMS\Extbase\Annotation\Inject;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 
 /**
  *
@@ -37,19 +40,14 @@ use TYPO3\CMS\Extbase\Annotation\Inject;
 class ItemController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * itemRepository
-     *
-     * @Inject
-     * @var \Comsolit\OwlSlider\Domain\Repository\ItemRepository
+     * @var ItemRepository
      */
-    protected $itemRepository;
+    protected ItemRepository $itemRepository;
 
     /**
-     * action list
-     *
      * @return void
      */
-    public function listAction()
+    public function listAction(): void
     {
         $settings = $this->settings;
         $customConfigName = $this->getCustomConfigName($settings);
@@ -109,11 +107,20 @@ class ItemController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action show
      *
-     * @param \Comsolit\OwlSlider\Domain\Model\Item $item
+     * @param Item $item
      * @return void
      */
-    public function showAction(\Comsolit\OwlSlider\Domain\Model\Item $item)
+    public function showAction(Item $item)
     {
         $this->view->assign('item', $item);
+    }
+
+    /**
+     * @param ItemRepository $itemRepository
+     * @return void
+     */
+    public function injectItemRepository(ItemRepository $itemRepository): void
+    {
+        $this->itemRepository = $itemRepository;
     }
 }

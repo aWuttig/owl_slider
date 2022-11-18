@@ -1,8 +1,19 @@
 plugin.tx_owlslider {
   view {
-    templateRootPath = {$plugin.tx_owlslider.view.templateRootPath}
-    partialRootPath = {$plugin.tx_owlslider.view.partialRootPath}
-    layoutRootPath = {$plugin.tx_owlslider.view.layoutRootPath}
+    templateRootPaths {
+      0 = EXT:owl_slider/Resources/Private/Templates/
+      1 = {$plugin.tx_owlslider.view.templateRootPath}
+    }
+
+    partialRootPaths {
+      0 = EXT:owl_slider/Resources/Private/Partials/
+      1 = {$plugin.tx_owlslider.view.partialRootPath}
+    }
+
+    layoutRootPaths {
+      0 = EXT:owl_slider/Resources/Private/Layouts/
+      1 = {$plugin.tx_owlslider.view.layoutRootPath}
+    }
   }
 
   persistence {
