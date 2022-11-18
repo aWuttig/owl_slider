@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'owlSlider',
     'description' => 'Responsive carousel slider for TYPO3, Touch enabled based on the jQuery OWL Carousel.',
     'category' => 'misc',
@@ -17,14 +17,12 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '3.0.0',
-    'constraints' => array(
-        'depends' => array(
-            'extbase' => '9.0.00-9.5.99',
-            'fluid' => '9.0.00-9.5.99',
-            'typo3' => '9.0.00-9.5.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array()
-    )
-);
+    'version' => '4.0.0',
+    'constraints' => [
+        'depends' => [
+            'typo3' => '11.5.0-11.9.99',
+        ],
+        'conflicts' => [],
+        'suggests' => []
+    ]
+];
